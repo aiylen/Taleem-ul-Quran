@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taleem-ul-Quran | Online Quran Academy</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Amiri&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .arabic { font-family: 'Amiri', serif; }
+
+    /* ===== ANIMATIONS ===== */
+    
+    /* Fade up animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.9s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Stagger delay for fade-up */
+    .fade-up {
+      animation-delay: var(--delay, 0s);
+    }
+
+    /* Scroll reveal animation */
+    .scroll-reveal {
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    .scroll-reveal.reveal {
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    /* Button enhanced animations */
+    .btn-animated {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .btn-animated::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: left 0.5s ease;
+      z-index: 0;
+    }
+
+    .btn-animated:hover::before {
+      left: 100%;
+    }
+
+    .btn-animated:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Card hover animations */
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+    }
+
+    .card-hover:hover {
+      box-shadow: 0 15px 35px rgba(16, 185, 129, 0.2);
+    }
+
+    .card-hover:hover h3 {
+      color: #10b981;
+    }
+
+    /* Icon pulse animation */
+    .icon-pulse {
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .icon-pulse:hover {
+      animation: pulse 0.6s ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    /* Smooth list item animations */
+    .list-item {
+      transition: all 0.3s ease;
+      padding-left: 0;
+    }
+
+    .list-item:hover {
+      padding-left: 8px;
+      color: #10b981;
+    }
+
+    /* Section fade in on scroll */
+    .section-fade {
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    .section-fade.active {
+      opacity: 1;
+    }
+
+    /* Smooth transitions for all interactive elements */
+    * {
+      transition: color 0.3s ease, background-color 0.3s ease;
+    }
+
+    /* Teacher photo enhancement */
+    .teacher-image {
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .teacher-image:hover {
+      box-shadow: 0 20px 40px rgba(16, 185, 129, 0.25);
+    }
+
+    /* Text glow on hover */
+    .text-glow:hover {
+      text-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+    }
+
+    /* Smooth underline animation for headings */
+    h2::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 3px;
+      background: #10b981;
+      margin: 12px auto 0;
+      transition: width 0.4s ease;
+    }
+
+    section:hover h2::after {
+      width: 80px;
+    }
+
+    /* Footer icon animation */
+    .footer-icon {
+      display: inline-block;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .footer-icon:hover {
+      transform: scale(1.3);
+      filter: brightness(1.2);
+    }
+  </style>
+</head>
+
+<body class="bg-[#f9faf8] text-gray-800">
+
+<!-- ================= HERO ================= -->
+<section class="relative bg-gradient-to-br from-emerald-900 to-emerald-700 text-white">
+  <div class="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1609599006353-e629aaabfeae')] bg-cover bg-center"></div>
+
+  <div class="relative max-w-6xl mx-auto px-6 py-24 text-center fade-up">
+    <p class="arabic text-2xl mb-4">
+      إِنَّ هَـٰذَا ٱلْقُرْءَانَ يَهْدِى لِلَّتِى هِىَ أَقْوَمُ
+    </p>
+
+    <h1 class="text-4xl md:text-5xl font-semibold mb-2">Taleem-ul-Quran</h1>
+    <p class="text-2xl text-emerald-200 mb-6">تعلیم القرآن</p>
+
+    <p class="text-lg text-emerald-100 mb-8">
+      Learn Quran with Tajweed, Hifz & Islamic Studies
+    </p>
+    <p class="text-lg text-emerald-100 mb-8">قرآن کریم سیکھیں تجوید اور حفظ کے ساتھ</p>
+
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="https://wa.me/923002247562" target="_blank"
+         class="btn-animated bg-emerald-600 hover:bg-emerald-700 px-6 py-3 rounded-full flex items-center gap-2 transition relative z-10">
+        <i class="fab fa-whatsapp"></i> Contact on WhatsApp
+      </a>
+
+      <a href="https://facebook.com/yourpage" target="_blank"
+         class="btn-animated bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full flex items-center gap-2 transition relative z-10">
+        <i class="fab fa-facebook-f"></i> Facebook Page
+      </a>
+
+      <a href="tel:+923002247562"
+         class="btn-animated bg-yellow-600 hover:bg-yellow-700 px-6 py-3 rounded-full flex items-center gap-2 transition relative z-10">
+        <i class="fas fa-phone"></i> Call Now
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT / TEACHER ================= -->
+<section class="max-w-6xl mx-auto px-6 py-20 fade-up">
+  <div class="grid md:grid-cols-2 gap-10 items-center">
+
+    <div>
+      <h2 class="text-3xl font-semibold mb-2 text-emerald-800">
+        About the Teacher
+      </h2>
+      <p class="text-2xl text-emerald-700 mb-4">استاد کے بارے میں</p>
+
+      <p class="mb-3 text-gray-700">
+        <!-- Teacher intro -->
+        Qualified Quran teacher dedicated to teaching the Holy Quran with
+        proper Tajweed, understanding and practice in a friendly online environment.
+      </p>
+      <p class="mb-4 text-gray-700">
+        قرآن کریم سیکھانے میں ماہر، صحیح تجوید اور عمل کے ساتھ دوستانہ ماحول میں تعلیم دیتے ہیں۔
+      </p>
+
+      <ul class="space-y-2">
+        <li class="list-item">✔ Experience: <strong>05 Years</strong> | تجربہ: <strong>05 سال</strong></li>
+        <li class="list-item">✔ Teaching Method: Simple, Step-by-Step | آسان انداز میں</li>
+        <li class="list-item">✔ Flexible Class Timings | وقت کے مطابق کلاسز</li>
+        <li class="list-item">✔ Online via Zoom / WhatsApp</li>
+      </ul>
+
+      <p class="mt-4 italic text-emerald-700">
+        "Our mission is to make Quran learning easy and accessible for everyone."
+      </p>
+      <p class="mt-2 italic text-emerald-700">
+        "ہمارا مقصد قرآن سیکھنا سب کے لیے آسان بنانا ہے۔"
+      </p>
+    </div>
+
+    <div class="flex justify-center">
+      <div class="teacher-image w-64 h-64 bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-full flex items-center justify-center text-gray-400 shadow-lg">
+        Teacher Photo
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CLASSES ================= -->
+<section class="bg-white py-20">
+  <div class="max-w-6xl mx-auto px-6 fade-up">
+    <h2 class="text-3xl font-semibold text-center mb-2 text-emerald-800">
+      Classes & Services
+    </h2>
+    <p class="text-2xl font-semibold text-center text-emerald-700 mb-12">کلاسز اور سروسز</p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <div class="card-hover p-6 border border-emerald-100 rounded-xl bg-gradient-to-br from-white to-emerald-50">
+        <h3 class="text-xl font-medium mb-1">Hifz-ul-Quran</h3>
+        <p class="text-emerald-700 text-sm font-medium mb-2">حفظ القرآن</p>
+        <p>Complete memorization program with regular revision.</p>
+        <p class="text-gray-600 text-sm mt-1">مکمل حفاظت کے پروگرام کے ساتھ</p>
+      </div>
+
+      <div class="card-hover p-6 border border-emerald-100 rounded-xl bg-gradient-to-br from-white to-emerald-50">
+        <h3 class="text-xl font-medium mb-1">Nazra Quran</h3>
+        <p class="text-emerald-700 text-sm font-medium mb-2">نزرہ قرآن</p>
+        <p>Correct recitation with proper pronunciation.</p>
+        <p class="text-gray-600 text-sm mt-1">صحیح تلاوت سیکھیں</p>
+      </div>
+
+      <div class="card-hover p-6 border border-emerald-100 rounded-xl bg-gradient-to-br from-white to-emerald-50">
+        <h3 class="text-xl font-medium mb-1">Tajweed</h3>
+        <p class="text-emerald-700 text-sm font-medium mb-2">تجوید</p>
+        <p>Learn Tajweed rules for beautiful recitation.</p>
+        <p class="text-gray-600 text-sm mt-1">تجوید کے اصول سیکھیں</p>
+      </div>
+
+      <div class="card-hover p-6 border border-emerald-100 rounded-xl bg-gradient-to-br from-white to-emerald-50">
+        <h3 class="text-xl font-medium mb-1">Namaz & Basic Deen</h3>
+        <p class="text-emerald-700 text-sm font-medium mb-2">نماز اور اسلامی تعلیمات</p>
+        <p>Daily Islamic practices and fundamentals.</p>
+        <p class="text-gray-600 text-sm mt-1">روزمرہ اسلامی عمل</p>
+      </div>
+
+      <div class="card-hover p-6 border border-emerald-100 rounded-xl bg-gradient-to-br from-white to-emerald-50">
+        <h3 class="text-xl font-medium mb-1">Quran for Kids & Adults</h3>
+        <p class="text-emerald-700 text-sm font-medium mb-2">بچوں اور بڑوں کے لیے</p>
+        <p>Separate approach for children and adults.</p>
+        <p class="text-gray-600 text-sm mt-1">الگ الگ طریقہ تعلیم</p>
+      </div>
+
+    </div>
+
+    <p class="text-center mt-8 text-gray-600">
+      All classes are conducted online via Zoom or WhatsApp.
+    </p>
+    <p class="text-center text-gray-600">
+      تمام کلاسز آن لائن ہوتی ہیں
+    </p>
+  </div>
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+<section class="py-20 bg-emerald-50">
+  <div class="max-w-6xl mx-auto px-6 fade-up">
+    <h2 class="text-3xl font-semibold text-center mb-2 text-emerald-800">
+      Why Choose Taleem-ul-Quran
+    </h2>
+    <p class="text-2xl font-semibold text-center text-emerald-700 mb-10">ہمیں کیوں منتخب کریں؟</p>
+
+    <div class="grid md:grid-cols-3 gap-8 text-center">
+      <div class="card-hover bg-white rounded-xl p-8 shadow-md">
+        <i class="icon-pulse fas fa-book-quran text-4xl text-emerald-700 mb-3"></i>
+        <p class="font-medium text-gray-800">Qualified & Experienced Teacher</p>
+        <p class="text-sm text-emerald-700 mt-1">ماہر اور تجربہ کار استاد</p>
+      </div>
+
+      <div class="card-hover bg-white rounded-xl p-8 shadow-md">
+        <i class="icon-pulse fas fa-clock text-4xl text-emerald-700 mb-3"></i>
+        <p class="font-medium text-gray-800">Flexible Online Timings</p>
+        <p class="text-sm text-emerald-700 mt-1">آپ کے وقت کے مطابق</p>
+      </div>
+
+      <div class="card-hover bg-white rounded-xl p-8 shadow-md">
+        <i class="icon-pulse fas fa-heart text-4xl text-emerald-700 mb-3"></i>
+        <p class="font-medium text-gray-800">Friendly & Spiritual Learning</p>
+        <p class="text-sm text-emerald-700 mt-1">دوستانہ اور روحانی ماحول</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT / CTA ================= -->
+<footer class="bg-emerald-900 text-white py-12 text-center">
+  <h3 class="text-xl mb-2">Start Your Quran Journey Today</h3>
+  <h3 class="text-xl mb-4">آج ہی اپنا سفر شروع کریں</h3>
+
+  <div class="flex justify-center gap-6 text-2xl">
+    <a href="https://wa.me/923002247562" target="_blank" class="footer-icon text-emerald-300 hover:text-emerald-200"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://facebook.com/yourpage" target="_blank" class="footer-icon text-blue-300 hover:text-blue-200"><i class="fab fa-facebook-f"></i></a>
+    <a href="tel:+923002247562" class="footer-icon text-yellow-300 hover:text-yellow-200"><i class="fas fa-phone"></i></a>
+  </div>
+
+  <!-- Optional Google Form -->
+  <!-- <iframe src="YOUR_GOOGLE_FORM_LINK" class="w-full max-w-xl mx-auto mt-8 h-96"></iframe> -->
+
+  <p class="mt-6 text-sm text-emerald-200">
+    © 2026 Taleem-ul-Quran. All rights reserved.
+  </p>
+  <p class="text-sm text-emerald-200">
+    © 2026 تعلیم القرآن۔ تمام حقوق محفوظ ہیں۔
+  </p>
+</footer>
+
+</body>
+</html>
